@@ -1,23 +1,25 @@
+function getNumber(isIncrease) {
+  const caseNumberField = document.getElementById("input-field");
+  const caseNumberString = caseNumberField.value;
+  const previousCaseNumber = parseInt(caseNumberString);
+
+  let newNumber;
+
+  if (isIncrease === true) {
+    newNumber = previousCaseNumber + 1;
+  } else {
+    newNumber = previousCaseNumber - 1;
+  }
+  caseNumberField.value = newNumber;
+}
+
 document
   .getElementById("input-btn-plus")
   .addEventListener("click", function () {
-    const caseNumberField = document.getElementById("input-field");
-    const caseNumberString = caseNumberField.value;
-    const previousCaseNumber = parseInt(caseNumberString);
-
-    const newNumber = previousCaseNumber + 1;
-
-    caseNumberField.value = newNumber;
+    getNumber(true);
   });
-  document
+document
   .getElementById("input-btn-minus")
   .addEventListener("click", function () {
-    const caseNumberField = document.getElementById("input-field");
-    const caseNumberString = caseNumberField.value;
-    const previousCaseNumber = parseInt(caseNumberString);
-
-    const newNumber = previousCaseNumber - 1;
-
-    caseNumberField.value = newNumber;
+    getNumber(false);
   });
-
