@@ -12,15 +12,25 @@ function updatePhoneTotal(isIncrease) {
   }
 
   newPhoneNumberField.value = newPhoneTotal;
+  return newPhoneTotal;
+}
+
+function getPhoneTotal(newPhoneTotal) {
+  const phoneTotalPrice = newPhoneTotal * 1219;
+  const phoneTotalElement = document.getElementById("phone-total");
+  phoneTotalElement.innerText = phoneTotalPrice;
 }
 
 document
   .getElementById("phone-btn-plus")
   .addEventListener("click", function () {
-    updatePhoneTotal(true);
+    const newPhoneTotal = updatePhoneTotal(true);
+
+    getPhoneTotal(newPhoneTotal);
   });
 document
   .getElementById("phone-btn-minus")
   .addEventListener("click", function () {
-    updatePhoneTotal(false);
+    const newPhoneTotal = updatePhoneTotal(false);
+    getPhoneTotal(newPhoneTotal );
   });
