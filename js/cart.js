@@ -15,10 +15,10 @@ function updateCaseTotal(isIncrease) {
   return newCaseNumber;
 }
 
-function updateCaseTotalPrice(newCaseNumber){
-    const newTotalPrice = newCaseNumber * 59;
-    const newTotalElement = document.getElementById("case-total");
-    newTotalElement.innerText = newTotalPrice;
+function updateCaseTotalPrice(newCaseNumber) {
+  const newTotalPrice = newCaseNumber * 59;
+  const newTotalElement = document.getElementById("case-total");
+  newTotalElement.innerText = newTotalPrice;
 }
 
 document
@@ -26,8 +26,7 @@ document
   .addEventListener("click", function () {
     const newCaseNumber = updateCaseTotal(true);
 
-updateCaseTotalPrice(newCaseNumber);
-   
+    updateCaseTotalPrice(newCaseNumber);
   });
 
 document
@@ -35,5 +34,5 @@ document
   .addEventListener("click", function () {
     const newCaseNumber = updateCaseTotal(false);
 
-   updateCaseTotalPrice(newCaseNumber);
+    updateCaseTotalPrice(newCaseNumber);
   });
